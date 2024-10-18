@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة الإدارة - التسلسل الزمني للتاريخ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>لوحة الإدارة - التسلسل الزمني للتاريخ</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">العودة إلى الصفحة الرئيسية</a></li>
+                <li><button id="logoutButton">تسجيل الخروج</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="event-form">
+            <h2>إضافة/تعديل حدث</h2>
+            <form id="adminForm" novalidate>
+                <input type="hidden" id="eventId">
+                <div class="form-group">
+                    <label for="title">العنوان:</label>
+                    <input type="text" id="title" required minlength="3" maxlength="255">
+                    <span class="error" id="titleError"></span>
+                </div>
+                
+                <label for="date">التاريخ:</label>
+                <input type="date" id="date" required>
+                
+                <label for="category">الفئة:</label>
+                <input type="text" id="category" required>
+                
+                <label for="description">الوصف:</label>
+                <textarea id="description" required></textarea>
+                
+                <label for="image">رابط الصورة:</label>
+                <input type="url" id="image">
+                
+                <button type="submit">حفظ الحدث</button>
+            </form>
+        </section>
+
+        <section id="events-list">
+            <h2>قائمة الأحداث</h2>
+            <div class="admin-controls">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="البحث عن الأحداث...">
+                    <button id="searchButton">بحث</button>
+                </div>
+                <div class="sort-filter">
+                    <select id="sortSelect">
+                        <option value="date-desc">الأحدث أولاً</option>
+                        <option value="date-asc">الأقدم أولاً</option>
+                        <option value="category">حسب الفئة</option>
+                    </select>
+                    <select id="filterSelect">
+                        <option value="">جميع الفئات</option>
+                    </select>
+                </div>
+            </div>
+            <ul id="adminEventsList"></ul>
+            <div class="pagination">
+                <button id="prevPage">السابق</button>
+                <span id="currentPage"></span>
+                <button id="nextPage">التالي</button>
+            </div>
+        </section>
+
+        <!-- Add this section before the closing </main> tag -->
+        <section id="data-visualization">
+            <h2>إحصائيات الأحداث</h2>
+            <canvas id="eventChart"></canvas>
+        </section>
+    </main>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2024</p>
+    </footer>
+
+    <script src="js/timeline.js"></script>
+    <script src="js/admin.js"></script>
+    <script>
+        document.getElementById('logoutButton').addEventListener('click', function() {
+            localStorage.removeItem('adminToken');
+            window.location.href = 'login.html';
+        });
+    </script>
+
+    <!-- Add these script tags before the closing </body> tag -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/visualization.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التسلسل الزمني للتاريخ</title>
+    <meta name="description" content="استكشف الأحداث التاريخية الهامة في تسلسل زمني تفاعلي">
+    <meta name="keywords" content="تاريخ, تسلسل زمني, أحداث تاريخية">
+    <meta property="og:title" content="التسلسل الزمني للتاريخ">
+    <meta property="og:description" content="استكشف الأحداث التاريخية الهامة في تسلسل زمني تفاعلي">
+    <meta property="og:image" content="https://example.com/timeline-preview.jpg">
+    <meta property="og:url" content="https://example.com/timeline">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>التسلسل الزمني للتاريخ</h1>
+        <nav>
+            <ul>
+                <li><a href="#timeline">الخط الزمني</a></li>
+                <li><a href="#categories">الفئات</a></li>
+                <li><a href="#search">البحث</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="random-event">
+            <h2>حدث عشوائي</h2>
+            <div id="random-event-content"></div>
+            <button id="load-random-event">حدث عشوائي آخر</button>
+        </section>
+
+        <section id="search">
+            <input type="text" id="searchInput" placeholder="ابحث عن حدث...">
+            <button id="searchButton" data-i18n="search">بحث</button>
+        </section>
+
+        <section id="categories">
+            <ul class="category-list" role="tablist">
+                <li role="tab" tabindex="0">الكل</li>
+                <!-- ... other category items ... -->
+            </ul>
+        </section>
+
+        <section id="timeline">
+            <!-- Timeline events will be inserted here -->
+        </section>
+
+        <section id="social-share">
+            <h2>شارك التسلسل الزمني</h2>
+            <button id="shareTwitter" class="share-button"><i class="fab fa-twitter"></i> تويتر</button>
+            <button id="shareFacebook" class="share-button"><i class="fab fa-facebook-f"></i> فيسبوك</button>
+            <button id="shareWhatsapp" class="share-button"><i class="fab fa-whatsapp"></i> واتساب</button>
+        </section>
+
+        <button id="printTimeline" class="print-button"><i class="fas fa-print"></i> طباعة التسلسل الزمني</button>
+
+        <!-- Add this section after the existing search section -->
+        <section id="advanced-search">
+            <h2>بحث متقدم</h2>
+            <form id="advancedSearchForm">
+                <input type="text" id="advancedSearchInput" placeholder="كلمات البحث...">
+                <select id="categoryFilter">
+                    <option value="">جميع الفئات</option>
+                    <!-- Categories will be populated dynamically -->
+                </select>
+                <input type="date" id="startDate" placeholder="تاريخ البداية">
+                <input type="date" id="endDate" placeholder="تاريخ النهاية">
+                <button type="submit">بحث متقدم</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2024</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/timeline.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/social-share.js"></script>
+    <script src="js/print.js"></script>
+    <script src="js/advanced-search.js"></script>
+</body>
+</html>

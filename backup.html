@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>النسخ الاحتياطي واستعادة البيانات</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <header>
+        <h1>النسخ الاحتياطي واستعادة البيانات</h1>
+        <nav>
+            <ul>
+                <li><a href="admin.html">العودة إلى لوحة الإدارة</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="backup">
+            <h2>نسخ احتياطي للبيانات</h2>
+            <button id="backupButton">تنزيل نسخة احتياطية</button>
+        </section>
+        <section id="restore">
+            <h2>استعادة البيانات</h2>
+            <input type="file" id="restoreFile" accept=".json">
+            <button id="restoreButton">استعادة البيانات</button>
+        </section>
+    </main>
+    <script src="js/backup-restore.js"></script>
+</body>
+</html>
